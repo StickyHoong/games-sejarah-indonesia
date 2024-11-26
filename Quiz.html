@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Sejarah Indonesia</title>
+    <link rel="stylesheet" href="css/Quiz.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="stats-container">
+            <div class="timer">
+                <span class="timer-icon"></span>
+                <span id="time">15</span>s
+            </div>
+            <div class="score-display">Skor: <span id="score">0</span></div>
+        </div>
+        <div class="header">
+            <h1>Kuis Sejarah</h1>
+        </div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <div class="question"></div>
+        <div class="options-grid"></div>
+        <div class="final-score"></div>
+        <button onclick="nextQuestion()">Mulai Kuis</button>
+    </div>
+    <script src="js/Quiz.js"></script>
+</body>
+</html>

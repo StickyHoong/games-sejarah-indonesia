@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pukul Pemberontak</title>
+    <link rel="stylesheet" href="css/pukulpemberontak.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="score-time">
+            <div>Skor: <span id="score">0</span></div>
+            <div>Waktu: <span id="time">30</span></div>
+        </div>
+
+        <div class="title-box">
+            PUKUL PEMBERONTAKNYA BUKAN PAHLAWANNYA
+        </div>
+
+        <div class="game-area" id="gameArea">
+            <div class="hole">
+                <div class="character" data-index="0"></div>
+            </div>
+            <div class="hole">
+                <div class="character" data-index="1"></div>
+            </div>
+            <div class="hole">
+                <div class="character" data-index="2"></div>
+            </div>
+            <div class="hole">
+                <div class="character" data-index="3"></div>
+            </div>
+            <div class="hole">
+                <div class="character" data-index="4"></div>
+            </div>
+            <div class="hole">
+                <div class="character" data-index="5"></div>
+            </div>
+        </div>
+
+        <div class="control-buttons" id="welcomeScreen">
+            <button class="btn" onclick="startGame()">Mulai Game</button>
+            <button class="btn btn-back" onclick="goBack()">Kembali</button>
+        </div>
+    </div>
+
+    <div id="gameOver">
+        <h2>Game Over!</h2>
+        <p>Skor Akhir: <span id="finalScore">0</span></p>
+        <button class="btn" onclick="startGame()">Main Lagi</button>
+        <button class="btn btn-back" onclick="goBack()">Kembali</button>
+    </div>
+    <script src="js/pukulpemberontak.js"></script>
+</body>
+</html>

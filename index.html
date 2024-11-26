@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Sejarah Indonesia</title>
+    <link rel="stylesheet" href="css/Landingpage.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jelajahi Sejarah Indonesia</h1>
+            <p>Uji pengetahuanmu tentang sejarah Indonesia melalui game-game menarik</p>
+        </header>
+
+        <div class="quiz-container">
+            <div class="quiz-card">
+                <img src="aset/hammer.png" alt="Pukul Pemberontak">
+                <h2>Pukul Pemberontak</h2>
+                <p>Tantangan seru melawan pemberontak dalam sejarah Indonesia. Uji ketangkasanmu dalam game interaktif ini!</p>
+                <button class="play-btn" onclick="showModal('pemberontakModal')">Main</button>
+            </div>
+
+            <div class="quiz-card">
+                <img src="aset/brain.png" alt="Quiz Sejarah">
+                <h2>Quiz Sejarah</h2>
+                <p>Jawab pertanyaan seputar sejarah Indonesia dari masa ke masa. Tunjukkan pengetahuanmu!</p>
+                <button class="play-btn" onclick="showModal('quizModal')">Main</button>
+            </div>
+
+            <div class="quiz-card">
+                <img src="aset/puzzle (1).png" alt="Puzzle Sejarah">
+                <h2>Puzzle Sejarah</h2>
+                <p>Pecahkan teka-teki menarik tentang peristiwa bersejarah di Indonesia. Asah logikamu!</p>
+                <button class="play-btn" onclick="showModal('puzzleModal')">Main</button>
+            </div>
+        </div>
+    </div>
+
+        <!-- Modal Pukul Pemberontak -->
+        <div id="pemberontakModal" class="modal">
+            <div class="modal-content">
+                <h2>Selamat datang di Pukul Pemberontak!</h2>
+                <p>Bersiaplah untuk menguji ketangkasanmu dalam memukul pemberontak.</p>
+                <div class="modal-buttons">
+                    <button class="modal-btn start-btn" onclick="window.location.href='pukulpemberontak.html'">Mulai Game</button>
+                    <button class="modal-btn cancel-btn" onclick="hideModal('pemberontakModal')">Kembali</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Modal Quiz -->
+        <div id="quizModal" class="modal">
+            <div class="modal-content">
+                <h2>Selamat datang di Quiz Sejarah!</h2>
+                <p>Apakah kamu siap untuk menguji pengetahuanmu tentang sejarah Indonesia?</p>
+                <div class="modal-buttons">
+                    <button class="modal-btn start-btn" onclick="window.location.href='Quiz.html'">Mulai Quiz</button>
+                    <button class="modal-btn cancel-btn" onclick="hideModal('quizModal')">Kembali</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Modal Puzzle -->
+        <div id="puzzleModal" class="modal">
+            <div class="modal-content">
+                <h2>Selamat datang di Puzzle Sejarah!</h2>
+                <p>Susun potongan gambar dan pelajari momen bersejarah Indonesia.</p>
+                <div class="modal-buttons">
+                    <button class="modal-btn start-btn" onclick="window.location.href='puzzle.html'">Mulai Puzzle</button>
+                    <button class="modal-btn cancel-btn" onclick="hideModal('puzzleModal')">Kembali</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Animasi saat halaman dimuat
+            document.addEventListener('DOMContentLoaded', function() {
+                const cards = document.querySelectorAll('.game-card');
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        requestAnimationFrame(() => {
+                            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        });
+                    }, index * 200);
+                });
+            });
+    
+            // Fungsi untuk menampilkan modal
+            function showModal(modalId) {
+                document.getElementById(modalId).style.display = 'flex';
+            }
+    
+            // Fungsi untuk menyembunyikan modal
+            function hideModal(modalId) {
+                document.getElementById(modalId).style.display = 'none';
+            }
+    
+            // Menutup modal jika user mengklik di luar modal
+            window.onclick = function(event) {
+                if (event.target.classList.contains('modal')) {
+                    event.target.style.display = 'none';
+                }
+            }
+        </script>
+</body>
+</html>
